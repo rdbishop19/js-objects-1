@@ -64,46 +64,75 @@
 // Setting and Accessing Values on Objects
 // Dot Notation
 
+// const lassie = {
+//   age: 7,
+//   breed: "Collie",
+//   color: "White and Brown"
+// }
+
+// // String concatenation
+// console.log(lassie.color + " " + lassie.breed)
+// console.log("Lassie's breed is " + lassie.breed)
+
+// // String interpolation
+// console.log(`${lassie.color} ${lassie.breed}`)
+// console.log(`Lassie's breed is ${lassie.breed}`)
+
+// // Lightning Exercise: Given the object below, output each of the values to the console using dot notation.
+// const wardrobe = {
+//   height: 80,
+//   manufacturer: "Killibrew & Sons",
+//   contents: ["Dress shirt", "Jeans", "Suit", "Skirt", "Tennis shoes"],
+//   depth: 38,
+//   width: 50
+// }
+
+// console.log("The wardrobe")
+// console.log("Wardrobe height", wardrobe.height)
+// console.log("Wardrobe manufacturer", wardrobe.manufacturer)
+// console.log("Wardrobe contents:", wardrobe.contents)
+// console.log(wardrobe.contents[0], wardrobe.contents[1], wardrobe.contents[2], wardrobe.contents[3], wardrobe.contents[4])
+// console.log("Wardrobe depth", wardrobe.depth)
+// console.log("Wardrobe width", wardrobe.width)
+
+// // A different way to approach the lightning exercise
+// let wardrobeContents = ""
+
+// for (let i = 0; i < wardrobe.contents.length; i++) {
+//   // wardrobeContents = wardrobeContents + `${wardrobe.contents[i]} `
+//   wardrobeContents += `${wardrobe.contents[i]} `
+// }
+
+// const wardrobeDesc = `
+//   I own a wardrobe made by ${wardrobe.manufacturer} and its dimensions are ${wardrobe.height} x ${wardrobe.width} x ${wardrobe.depth} (h x w x d). My wardrobe contains ${wardrobeContents}.
+// `
+// console.log(wardrobeDesc)
+
+// Square bracket notation
 const lassie = {
   age: 7,
   breed: "Collie",
-  color: "White and Brown"
+  "hair color": "White and Brown"
 }
 
-// String concatenation
-console.log(lassie.color + " " + lassie.breed)
-console.log("Lassie's breed is " + lassie.breed)
+console.log("Dot notation", lassie.breed)
+console.log("Square bracket notation", lassie["breed"], lassie["hair color"])
 
-// String interpolation
-console.log(`${lassie.color} ${lassie.breed}`)
-console.log(`Lassie's breed is ${lassie.breed}`)
+// Breed is the key you want to get the value of in the object below
+const keyToLookup = "breed"
 
-// Lightning Exercise: Given the object below, output each of the values to the console using dot notation.
-const wardrobe = {
-  height: 80,
-  manufacturer: "Killibrew & Sons",
-  contents: ["Dress shirt", "Jeans", "Suit", "Skirt", "Tennis shoes"],
-  depth: 38,
-  width: 50
-}
+// First, make JavaScript evaluate the variable and give us its value
+console.log(keyToLookup)
 
-console.log("The wardrobe")
-console.log("Wardrobe height", wardrobe.height)
-console.log("Wardrobe manufacturer", wardrobe.manufacturer)
-console.log("Wardrobe contents:", wardrobe.contents)
-console.log(wardrobe.contents[0], wardrobe.contents[1], wardrobe.contents[2], wardrobe.contents[3], wardrobe.contents[4])
-console.log("Wardrobe depth", wardrobe.depth)
-console.log("Wardrobe width", wardrobe.width)
+// You have to use square brackets here because you want to evaluate the value in the variable keyToLookup
+console.log(lassie[keyToLookup])
 
-// A different way to approach the lightning exercise
-let wardrobeContents = ""
+// Adding new key value pairs to object using dot notation and square bracket notation
 
-for (let i = 0; i < wardrobe.contents.length; i++) {
-  // wardrobeContents = wardrobeContents + `${wardrobe.contents[i]} `
-  wardrobeContents += `${wardrobe.contents[i]} `
-}
+lassie.favoriteToy = "Frisbee"
 
-const wardrobeDesc = `
-  I own a wardrobe made by ${wardrobe.manufacturer} and its dimensions are ${wardrobe.height} x ${wardrobe.width} x ${wardrobe.depth} (h x w x d). My wardrobe contains ${wardrobeContents}.
-`
-console.log(wardrobeDesc)
+console.log("Lassie with fav toy", lassie)
+
+lassie["well"] = "Real deep..."
+
+console.log("Lassie with well", lassie)
