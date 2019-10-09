@@ -94,3 +94,16 @@ console.log("Wardrobe contents:", wardrobe.contents)
 console.log(wardrobe.contents[0], wardrobe.contents[1], wardrobe.contents[2], wardrobe.contents[3], wardrobe.contents[4])
 console.log("Wardrobe depth", wardrobe.depth)
 console.log("Wardrobe width", wardrobe.width)
+
+// A different way to approach the lightning exercise
+let wardrobeContents = ""
+
+for (let i = 0; i < wardrobe.contents.length; i++) {
+  // wardrobeContents = wardrobeContents + `${wardrobe.contents[i]} `
+  wardrobeContents += `${wardrobe.contents[i]} `
+}
+
+const wardrobeDesc = `
+  I own a wardrobe made by ${wardrobe.manufacturer} and its dimensions are ${wardrobe.height} x ${wardrobe.width} x ${wardrobe.depth} (h x w x d). My wardrobe contains ${wardrobeContents}.
+`
+console.log(wardrobeDesc)
